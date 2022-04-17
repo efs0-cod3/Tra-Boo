@@ -1,7 +1,5 @@
 let myLibrary;
-
 let defaultLibrary = [];
-
 let title_input = document.getElementsByClassName('label__title-input')[0];
 let author_input = document.getElementsByClassName('label__author-input')[0];
 let switchBtn = document.getElementsByClassName('switch-btn')[0];
@@ -12,7 +10,6 @@ let booksAddedContainer = document.getElementsByClassName('books-added-container
 switchBtn.addEventListener('click', () => {
     stvalue()
 });
-
 
 function stvalue() {
 
@@ -33,11 +30,8 @@ function getLocalStorage() {
     } else {
         myLibrary = defaultLibrary
     }
-
 }
 getLocalStorage();
-
-
 
 addBookBtn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -52,9 +46,7 @@ function resetValues() {
     author_input.value = '';
 }
 
-
 function Book(title, author, read) {
-
     this.title = title;
     this.author = author;
     this.read = read;
@@ -65,8 +57,6 @@ function addBook() {
     myLibrary.push(nBook)
     saveOnLocalStorage()
 }
-
-
 function show() {
     books_added.innerHTML = ''
     myLibrary.forEach((book) => {
@@ -81,13 +71,10 @@ function show() {
         books_added.insertAdjacentHTML('beforeEnd', html)
         delB(book)
         updateStatus(book)
-
     });
 
 }
 show();
-
-
 
 function delB(item) {
     let xBtn = document.getElementsByClassName('btn__x')[myLibrary.indexOf(item)].addEventListener('click', () => {
@@ -96,7 +83,6 @@ function delB(item) {
         saveOnLocalStorage()
         show()
     })
-
 }
 
 function updateStatus(item) {
@@ -110,6 +96,5 @@ function updateStatus(item) {
         }
         saveOnLocalStorage()
         show()
-
     })
 }
