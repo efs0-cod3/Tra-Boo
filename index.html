@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tra-Boo</title>
+</head>
+
+<body>
+    <main>
+
+        <header>
+            <h1 class="title">Tra-Boo</h1>
+            <h2 class="slogan">Your own book tracker on the web</h2>
+        </header>
+
+        <section class="form">
+            <label class='label__title' for="title">Title</label>
+            <input class='label__title-input' type="text" name='title'>
+            <label class='label__author' for="autor">Autor</label>
+            <input class='label__author-input' type="text" name='autor'>
+            <div class="book-status">
+                <p class="status-title">Read?</p>
+                <label for="switch">
+                <input type="checkbox" class="switch-btn" checked>
+                </label>
+            </div>
+            <button class="form__btn">+ Add Book</button>
+        </section>
+        <hr>
+
+        <section class="books-container">
+            <div class="books__header">
+                <div class="book__header-title">Title</div>
+                <div class="book__header-author">Author</div>
+                <div class="book__header-status">Status</div>
+                <div class="book__header-x">Delete</div>
+            </div>
+            <div class="books-added">
+            </div>
+            </div>
+
+
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
