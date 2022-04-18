@@ -41,8 +41,16 @@ addBookBtn.addEventListener('click', (e) => {
 })
 
 function resetValues() {
-    title_input.value = '';
-    author_input.value = '';
+    if(title_input.value != ''){
+        return
+    }else{
+        title_input.value = '';
+    }
+    if(author_input.value != ''){
+        return
+    }else{
+        author_input.value = '';
+    }
 }
 
 function Book(title, author, read) {
@@ -72,23 +80,6 @@ function addBook() {
     }
     saveOnLocalStorage()
 }
-function show() {
-    books_added.innerHTML = ''
-    myLibrary.forEach((book) => {
-        let html = `
-        <div class='books-added-container' data='book'>
-        <div class="book__title">${book.title}</div>
-        <div class="book__author">${book.author}</div>
-        <div class="book__status">${book.read}</div>
-        <button class="btn__x">X</button>
-        </div>
-        `;
-        books_added.insertAdjacentHTML('beforeEnd', html)
-        delB(book)
-        updateStatus(book)
-    });
-}
-show();
 
 function delB(item) {
     let xBtn = document.getElementsByClassName('btn__x')[myLibrary.indexOf(item)].addEventListener('click', () => {
@@ -100,7 +91,6 @@ function delB(item) {
 }
 
 function updateStatus(item) {
-   
     let itemOp = document.querySelectorAll('.book__status').forEach(el => {
         if(el.innerText == 'Read'){
             el.classList.add('read')
@@ -132,3 +122,20 @@ function removeWarning(){
     }, 2000)
 }
 
+function show() {
+    books_added.innerHTML = ''
+    myLibrary.forEach((book) => {
+        let html = `
+        <div class='books-added-container' data='book'>
+        <div class="book__title">${book.title}</div>
+        <div class="book__author">${book.author}</div>
+        <div class="book__status">${book.read}</div>
+        <button class="btn__x">X</button>
+        </div>
+        `;
+        books_added.insertAdjacentHTML('beforeEnd', html)
+        delB(book)
+        updateStatus(book)
+    });
+}
+show();
