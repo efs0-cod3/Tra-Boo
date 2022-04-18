@@ -64,8 +64,8 @@ function addBook() {
     if(title_input.value == '' && author_input.value == ''){
         title_input.classList.add('warning')
         author_input.classList.add('warning')
-        title_input.setAttribute('placeholder', 'Insert title')
-        author_input.setAttribute('placeholder', 'Insert author')
+        title_input.setAttribute('placeholder', 'Please insert title')
+        author_input.setAttribute('placeholder', 'Please insert author')
         removeWarning()
     }else if(title_input.value == '' ){
         title_input.classList.add('warning')
