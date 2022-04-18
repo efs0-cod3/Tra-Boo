@@ -69,11 +69,11 @@ function addBook() {
         removeWarning()
     }else if(title_input.value == '' ){
         title_input.classList.add('warning')
-        title_input.setAttribute('placeholder', 'Insert title')
+        title_input.setAttribute('placeholder', 'Please insert title')
         removeWarning()
     }else if(author_input.value == ''){
         author_input.classList.add('warning')
-        author_input.setAttribute('placeholder', 'Insert title')
+        author_input.setAttribute('placeholder', 'Please insert author')
         removeWarning()
     }else{
     myLibrary.push(nBook)
