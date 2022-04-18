@@ -97,6 +97,7 @@ function updateStatus(item) {
         }else if(el.innerText == 'Not Read'){
             el.classList.add('not-read')
         }
+        show()
     })
 
     let option = document.querySelectorAll('.book__status')[myLibrary.indexOf(item)].addEventListener('click', (e) => {
