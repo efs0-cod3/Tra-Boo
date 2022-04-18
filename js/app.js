@@ -12,7 +12,6 @@ switchBtn.addEventListener('click', () => {
 });
 
 function stvalue() {
-
     if (switchBtn[value = 'checked']) {
         switchBtn.value = 'read'
     } else {
@@ -54,7 +53,23 @@ function Book(title, author, read) {
 
 function addBook() {
     let nBook = new Book(title_input.value, author_input.value, switchBtn.value)
+    if(title_input.value == '' && author_input.value == ''){
+        title_input.classList.add('warning')
+        author_input.classList.add('warning')
+        title_input.setAttribute('placeholder', 'Insert title')
+        author_input.setAttribute('placeholder', 'Insert author')
+        removeWarning()
+    }else if(title_input.value == '' ){
+        title_input.classList.add('warning')
+        title_input.setAttribute('placeholder', 'Insert title')
+        removeWarning()
+    }else if(author_input.value == ''){
+        author_input.classList.add('warning')
+        author_input.setAttribute('placeholder', 'Insert title')
+        removeWarning()
+    }else{
     myLibrary.push(nBook)
+    }
     saveOnLocalStorage()
 }
 function show() {
@@ -72,7 +87,6 @@ function show() {
         delB(book)
         updateStatus(book)
     });
-
 }
 show();
 
@@ -86,7 +100,17 @@ function delB(item) {
 }
 
 function updateStatus(item) {
+   
+    let itemOp = document.querySelectorAll('.book__status').forEach(el => {
+        if(el.innerText == 'Read'){
+            el.classList.add('read')
+        }else if(el.innerText == 'Not Read'){
+            el.classList.add('not-read')
+        }
+    })
+
     let option = document.querySelectorAll('.book__status')[myLibrary.indexOf(item)].addEventListener('click', (e) => {
+        
         if (item.read == 'not read') {
             item.read = 'read'
             e.target.textContent = item.read
@@ -98,3 +122,13 @@ function updateStatus(item) {
         show()
     })
 }
+
+function removeWarning(){
+    setTimeout(function(){
+        title_input.classList.remove('warning')
+        author_input.classList.remove('warning')
+        title_input.setAttribute('placeholder', '')
+        author_input.setAttribute('placeholder', '')
+    }, 2000)
+}
+

@@ -42,7 +42,15 @@ header {
     border: solid 1px;
     border-radius: 3px;
     padding: 5px 5px;
+    font-size: 20px;
+
 }
+.label__author-input::placeholder,
+.label__title-input::placeholder {
+    color: red;
+
+}
+
 
 .book-status {
     margin-top: 1rem;
@@ -171,7 +179,17 @@ header {
 .btn__x {
     width: 100%;
     padding: 5px 0;
+}
 
+.read {
+    color: lightgreen;  
+}
+.not-read {
+    color: red;  
+}
+
+.warning{
+    border: solid 2px red;
 }
 
 @media all and (max-width: 800px) {
