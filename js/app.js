@@ -41,15 +41,11 @@ addBookBtn.addEventListener('click', (e) => {
 })
 
 function resetValues() {
-    if(title_input.value != ''){
-        return
-    }else{
-        title_input.value = '';
-    }
-    if(author_input.value != ''){
+    if(title_input.value == '' || author_input.value == ''){
         return
     }else{
         author_input.value = '';
+        title_input.value = '';
     }
 }
 
