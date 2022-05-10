@@ -2,7 +2,7 @@
 
 ### An app made to keep track of the books that i've been reading.
 
-<img src="https://github.com/efs0-cod3/Tra-Boo/blob/main/img/tra-boox2.gif"/>
+<img src="https://github.com/efs0-cod3/Tra-Boo/blob/main/tra-boo.gif"/>
 
 ## tech
 - HTML
